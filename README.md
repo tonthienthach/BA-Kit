@@ -1,17 +1,22 @@
-﻿# 🚀 BA-Kit for AI Coding Agents & IT Business Analysts
+﻿# 🚀 BA-Kit for Multi-Agent & IT Business Analysts
 
-> **Bộ công cụ & Kỹ năng AI thực chiến (AI Skills & Workflows) dành cho IT Business Analyst (BA) và Product Owner (PO).**
+> **Bộ công cụ & Kỹ năng AI thực chiến (AI Skills & Workflows) dành cho IT Business Analyst (BA) và Product Owner (PO) — Hỗ trợ Đa Nền Tảng AI Agent.**
 
 ---
 
-## 📌 Giới Thiệu Tổng Quan
+## 🤖 Hỗ Trợ Đa Agent (Multi-Agent Native)
 
-**BA-Kit** được thiết kế để tự động hóa 70–80% các tác vụ tài liệu thủ công lặp đi lặp lại của BA, bao gồm: viết đặc tả yêu cầu (SRS), tạo User Stories & Acceptance Criteria (Gherkin), đặc tả Use Cases, thiết kế sơ đồ nghiệp vụ trực quan (Mermaid), phân tích tác động thay đổi (Change Request / Impact Analysis), và sinh ma trận kịch bản kiểm thử (UAT Test Cases).
+BA-Kit được cấu hình sẵn để **mọi AI Agent / IDE phổ biến nhất hiện nay** đều tự động nhận diện và hoạt động trơn tru ngay khi mở repo:
 
-Bộ kit tương thích trực tiếp với:
-* **Antigravity IDE / Gemini Agent**
-* **Cursor AI / Windsurf / Claude Code / Roo Code / Cline**
-* **ChatGPT / Claude / Gemini Web** (thông qua thư mục `cheat-sheets/web-prompts-guide.md`)
+| AI Agent / IDE | Tệp Cấu Hình Tự Động Nhận Diện | Trạng Thái |
+|---|---|---|
+| **Google Antigravity / Gemini Agent** | `.agents/skills/*/SKILL.md`, `AGENTS.md` | ✅ Native Supported |
+| **Cursor AI** | `.cursorrules`, `.cursor/rules/ba-kit.mdc` | ✅ Native Supported |
+| **Claude Code CLI / Claude Desktop** | `CLAUDE.md` | ✅ Native Supported |
+| **Codeium Windsurf (Cascade)** | `.windsurfrules`, `AGENTS.md` | ✅ Native Supported |
+| **GitHub Copilot Chat & Workspace** | `.github/copilot-instructions.md` | ✅ Native Supported |
+| **Roo Code / Cline** | `AGENTS.md`, `.roomodes` | ✅ Supported |
+| **ChatGPT / Claude Web** | `cheat-sheets/web-prompts-guide.md` | ✅ Copy-Paste Ready |
 
 ---
 
@@ -19,74 +24,62 @@ Bộ kit tương thích trực tiếp với:
 
 ```text
 D:\PROJECT_2026\ba-kit\
+├── AGENTS.md                          # Tiêu chuẩn chỉ dẫn chung cho Multi-Agent
+├── CLAUDE.md                          # Cấu hình riêng cho Claude Code / Claude Desktop
+├── .cursorrules                       # Cấu hình cho Cursor IDE
+├── .cursor/rules/ba-kit.mdc           # Rule chuyên sâu cho Cursor AI
+├── .windsurfrules                     # Cấu hình cho Windsurf Cascade
+├── .github/copilot-instructions.md    # Cấu hình cho GitHub Copilot
 ├── README.md                          # Tài liệu hướng dẫn sử dụng tổng quan
 ├── package.json                       # Định danh project & metadata
-├── .agents/skills/                    # Thư mục chứa 6 AI Skills chuẩn Antigravity / Cursor
-│   ├── ba-srs/                        # Skill soạn thảo SRS hoàn chỉnh
-│   ├── ba-user-story/                 # Skill sinh User Stories & Acceptance Criteria
-│   ├── ba-use-case/                   # Skill đặc tả Use Case chi tiết
-│   ├── ba-diagram/                    # Skill vẽ sơ đồ Mermaid (Flow, Sequence, State, ERD)
-│   ├── ba-impact-analysis/            # Skill phân tích tác động Change Request
-│   └── ba-test-cases/                 # Skill sinh ma trận Test Scenarios & Test Cases
-├── templates/                         # Các biểu mẫu tài liệu chuẩn Markdown
+│
+├── .agents/skills/                    # Thư mục 6 AI Skills cốt lõi
+│   ├── ba-srs/                        # Soạn thảo SRS chuẩn IEEE
+│   ├── ba-user-story/                 # Sinh User Stories & Acceptance Criteria (Gherkin)
+│   ├── ba-use-case/                   # Đặc tả Use Case chi tiết (Cockburn/UML)
+│   ├── ba-diagram/                    # Thiết kế sơ đồ Mermaid (Flow, Sequence, State, ERD)
+│   ├── ba-impact-analysis/            # Phân tích tác động Change Request 6 chiều
+│   └── ba-test-cases/                 # Sinh ma trận Test Scenarios & UAT Test Cases
+│
+├── templates/                         # Biểu mẫu Markdown chuẩn
 │   ├── 01-srs-template.md             # Biểu mẫu SRS
 │   ├── 02-user-story-template.md      # Biểu mẫu User Story & AC
 │   ├── 03-use-case-template.md        # Biểu mẫu Use Case
 │   ├── 04-impact-analysis-template.md # Biểu mẫu phân tích tác động CR
 │   └── 05-test-cases-template.md      # Biểu mẫu ma trận kiểm thử
+│
 ├── cheat-sheets/                      # Cẩm nang tra cứu nhanh
 │   ├── mermaid-ba-cheat-sheet.md      # Hướng dẫn vẽ nhanh các sơ đồ Mermaid
 │   └── web-prompts-guide.md           # Prompt copy-paste dùng trên Web AI
-└── scripts/                           # Script tiện ích
+│
+└── scripts/
     └── install-skills.ps1             # Cài đặt tự động sang Global hoặc Workspace khác
 ```
 
 ---
 
-## 🛠️ Hướng Dẫn Sử Dụng Trong AI Agent / IDE
+## 🛠️ Danh Sách Lệnh Kích Hoạt (Slash Commands)
 
-Khi làm việc cùng AI Agent (như Antigravity hoặc Cursor), các kỹ năng sẽ tự động kích hoạt khi bạn sử dụng các từ khóa hoặc slash command:
+Trên bất kỳ Agent nào (Antigravity, Cursor, Claude, Windsurf), bạn có thể gọi tắt:
 
-### 1. Soạn thảo SRS (`ba-srs`)
-* **Cách gọi:** Gõ `/srs`, *"viết SRS cho tính năng [Tên tính năng]"*, *"lập tài liệu đặc tả yêu cầu cho phân hệ [Tên phân hệ]"*.
-* **Kết quả:** Sinh tài liệu SRS chuẩn IEEE gồm: Giới thiệu, Phạm vi, FR, NFR, Data Dictionary, UI Specs.
-
-### 2. User Stories & Acceptance Criteria (`ba-user-story`)
-* **Cách gọi:** Gõ `/story`, `/ac`, *"viết user story cho tính năng [Tên]"*, *"tạo acceptance criteria cho chức năng [Tên]"*.
-* **Kết quả:** User Story chuẩn INVEST, kèm 4–5 kịch bản AC (Happy path, Validation, Business rule violation, RBAC) chuẩn Given-When-Then.
-
-### 3. Đặc tả Use Case chi tiết (`ba-use-case`)
-* **Cách gọi:** Gõ `/usecase`, *"đặc tả use case cho [Tên]"*, *"viết use case chi tiết"*.
-* **Kết quả:** Bảng Use Case chuẩn Cockburn gồm Actor, Preconditions, Trigger, Main Flow (từng bước Actor vs System), Alternative Flows, Exception Flows, Business Rules.
-
-### 4. Vẽ sơ đồ nghiệp vụ bằng Mermaid (`ba-diagram`)
-* **Cách gọi:** Gõ `/diagram`, *"vẽ sequence diagram cho luồng [Tên]"*, *"vẽ flowchart"*, *"vẽ state diagram cho đơn hàng"*, *"vẽ ERD"*.
-* **Kết quả:** Mã nguồn Mermaid chuẩn cú pháp, render trực quan ngay trên Markdown.
-
-### 5. Đánh giá tác động Change Request (`ba-impact-analysis`)
-* **Cách gọi:** Gõ `/cr`, `/impact`, *"đánh giá tác động khi [mô tả thay đổi]"*, *"làm impact analysis cho CR này"*.
-* **Kết quả:** Ma trận 6 chiều: Nghiệp vụ As-Is vs To-Be, Màn hình UI, Logic API, DB Schema & dữ liệu lịch sử, Tích hợp chéo, Rủi ro & Rollback plan.
-
-### 6. Ma trận kiểm thử & UAT Test Cases (`ba-test-cases`)
-* **Cách gọi:** Gõ `/testcase`, *"sinh test case cho tính năng [Tên]"*, *"tạo kịch bản kiểm thử UAT"*.
-* **Kết quả:** Bảng Test Scenarios (P1-P4) và chi tiết Test Cases (Positive, Negative, Boundary BVA, Edge cases).
+1. `/srs` hoặc *"viết SRS cho [Tính năng]"*: Tạo tài liệu SRS hoàn chỉnh.
+2. `/story` hoặc `/ac`: Phân rã User Stories và viết Acceptance Criteria chuẩn Given-When-Then.
+3. `/usecase`: Đặc tả bảng Use Case chi tiết (Main flow, Alt flows, Exception flows, Business rules).
+4. `/diagram`: Sinh sơ đồ Mermaid (Flowchart, Sequence diagram, State diagram, ERD).
+5. `/cr` hoặc `/impact`: Báo cáo đánh giá tác động thay đổi 6 chiều kèm kế hoạch rollback.
+6. `/testcase`: Tạo ma trận kịch bản kiểm thử và Test Cases chi tiết cho UAT / QA.
 
 ---
 
-## 💻 Cài Đặt Cho Workspace Mới (1-Click Script)
+## 💻 Cài Đặt Vào Dự Án Mới (1-Click Script)
 
-Nếu bạn muốn copy toàn bộ 6 skills này vào một dự án khác:
-Mở PowerShell tại thư mục `D:\PROJECT_2026\ba-kit` và chạy:
+Để mang trọn bộ cấu hình này sang một dự án khác:
+Mở PowerShell tại `D:\PROJECT_2026\ba-kit` và chạy:
 
 ```powershell
 # Cài đặt vào workspace mục tiêu
-.\scripts\install-skills.ps1 -TargetPath "D:\Path\To\Your-Other-Project"
+.\scripts\install-skills.ps1 -TargetPath "D:\Path\To\Your-Project"
 
 # Hoặc cài đặt vào Global Config của Antigravity/Gemini (dùng cho mọi dự án)
 .\scripts\install-skills.ps1 -Global
 ```
-
----
-
-## 📄 Bản Quyền & Giấy Phép
-Dự án được khởi tạo và lưu trữ cục bộ phục vụ công việc phân tích nghiệp vụ tại `D:\PROJECT_2026\ba-kit`.
