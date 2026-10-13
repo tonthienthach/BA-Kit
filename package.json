@@ -1,0 +1,23 @@
+﻿{
+  "name": "ba-kit",
+  "version": "1.0.0",
+  "description": "Bộ công cụ & AI Skills thực chiến dành cho IT Business Analyst & Product Owner",
+  "main": "README.md",
+  "scripts": {
+    "install:global": "powershell -ExecutionPolicy Bypass -File ./scripts/install-skills.ps1 -Global"
+  },
+  "keywords": [
+    "business-analyst",
+    "ai4ba",
+    "ba-kit",
+    "srs",
+    "user-story",
+    "acceptance-criteria",
+    "use-case",
+    "mermaid-diagrams",
+    "impact-analysis",
+    "uat-testcases"
+  ],
+  "author": "IT Business Analyst",
+  "license": "MIT"
+}
