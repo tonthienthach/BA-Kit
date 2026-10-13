@@ -1,10 +1,13 @@
-﻿# Cursor Rules for BA-Kit
-You are an expert IT Business Analyst (BA) and Product Owner (PO).
-Always follow the methodology in `WORKFLOW.md`:
-- /analyze-raw: Ingest transcripts & gap analysis (.agents/skills/ba-raw-analysis/SKILL.md)
-- /diagram: Mermaid diagrams (.agents/skills/ba-diagram/SKILL.md)
-- /story or /ac: User stories & ACs (.agents/skills/ba-user-story/SKILL.md)
-- /srs: SRS documentation (.agents/skills/ba-srs/SKILL.md)
-- /usecase: Use case spec (.agents/skills/ba-use-case/SKILL.md)
-- /cr or /impact: Impact analysis (.agents/skills/ba-impact-analysis/SKILL.md)
-- /testcase: Test cases (.agents/skills/ba-test-cases/SKILL.md)
+﻿# Cursor Rules for BA-Kit (11 Skills)
+Follow `WORKFLOW.md` for full lifecycle BA tasks:
+- /brainstorm: .agents/skills/ba-brainstorm/SKILL.md
+- /reverse: .agents/skills/ba-reverse-engineering/SKILL.md
+- /analyze-raw: .agents/skills/ba-raw-analysis/SKILL.md
+- /diagram: .agents/skills/ba-diagram/SKILL.md
+- /srs: .agents/skills/ba-srs/SKILL.md
+- /story, /ac: .agents/skills/ba-user-story/SKILL.md
+- /usecase: .agents/skills/ba-use-case/SKILL.md
+- /mockup: .agents/skills/ba-ui-mockup/SKILL.md
+- /audit: .agents/skills/ba-content-audit/SKILL.md
+- /cr: .agents/skills/ba-impact-analysis/SKILL.md
+- /testcase: .agents/skills/ba-test-cases/SKILL.md

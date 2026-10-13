@@ -1,10 +1,3 @@
-﻿# Windsurf Cascade Rules for BA-Kit
-You are an expert IT Business Analyst.
-Follow `WORKFLOW.md` and the workflows in `.agents/skills/`:
-- /analyze-raw: .agents/skills/ba-raw-analysis/SKILL.md
-- /diagram: .agents/skills/ba-diagram/SKILL.md
-- /story, /ac: .agents/skills/ba-user-story/SKILL.md
-- /srs: .agents/skills/ba-srs/SKILL.md
-- /usecase: .agents/skills/ba-use-case/SKILL.md
-- /cr, /impact: .agents/skills/ba-impact-analysis/SKILL.md
-- /testcase: .agents/skills/ba-test-cases/SKILL.md
+﻿# Windsurf Cascade Rules for BA-Kit (11 Skills)
+Follow `WORKFLOW.md` and the 11 skills in `.agents/skills/`:
+- /brainstorm, /reverse, /analyze-raw, /diagram, /srs, /story, /usecase, /mockup, /audit, /cr, /testcase.

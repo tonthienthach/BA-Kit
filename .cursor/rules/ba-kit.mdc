@@ -1,14 +1,20 @@
 ﻿---
-description: IT Business Analyst skills and documentation generator for Cursor AI
+description: 11 IT Business Analyst skills and documentation generator for Cursor AI
 globs: **/*
 alwaysApply: true
 ---
 
-# Cursor Rule: BA-Kit AI Skills
+# Cursor Rule: BA-Kit 11 Skills Suite
 
-Follow the 5-Stage Analysis Pipeline in `WORKFLOW.md`:
-1. `ba-raw-analysis`: Raw transcript ingestion, gap analysis, clarification questions
-2. `ba-diagram`: Mermaid Flowchart, Sequence, State, and ERD
-3. `ba-user-story` / `ba-srs` / `ba-use-case`: Requirements specification
-4. `ba-impact-analysis`: 6-dimension Change Request analysis
-5. `ba-test-cases`: Test Scenarios & UAT Test Cases
+Follow the 11-skill pipeline in `WORKFLOW.md`:
+1. `ba-brainstorm`: 7-step Elicitation Interview
+2. `ba-reverse-engineering`: Reverse Engineering from Legacy/Web
+3. `ba-raw-analysis`: Raw Transcript Ingestion & Gap Analysis
+4. `ba-diagram`: Mermaid Diagrams
+5. `ba-srs`: IEEE SRS Document
+6. `ba-user-story`: Agile Stories & Given-When-Then ACs
+7. `ba-use-case`: Cockburn Use Case Specification
+8. `ba-ui-mockup`: ASCII Wireframe & Figma Make Prompt Bridge
+9. `ba-content-audit`: Quality Audit & QA Readiness Scoring
+10. `ba-impact-analysis`: 6-dimension Change Request Analysis
+11. `ba-test-cases`: Test Scenarios & UAT Test Cases
